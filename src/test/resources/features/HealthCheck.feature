@@ -22,4 +22,33 @@ Feature: E-commerce Project Web Site
 	@UrlRedirection
 	Scenario: validate web site redirected to correct url
 	Given User navigated to the home page of the application url
-	And  Match the url
+	Then  Match the url
+	
+	@titleCheck
+  Scenario: Validate application title is correct
+    Given  User navigated to the home page of the application url
+    Then Application title is "My Store"
+    
+  @LogoDisplay
+  Scenario: Validate application logo is displayed
+    Given User navigated to the home page of the application url
+    Then Application logo is displayed  
+    
+  @LogoHeight
+  Scenario: Validate application logo height
+    Given User navigated to the home page of the application url
+    When User is on application landing page
+    Then Application logo height is "99"  
+    
+  @LogoWidth
+  Scenario: Validate application logo width
+  	Given User navigated to the home page of the application url
+    When User is on application landing page
+    Then Application logo width is "350"  
+    
+   @searchFunction
+  Scenario: Validate user is able to search a product from searchbox on landing page
+  	Given User navigated to the home page of the application url
+    When Search box is displayed
+    And User search for "Dress"
+    Then Search box shows result containing "Dress" as product is 5   
