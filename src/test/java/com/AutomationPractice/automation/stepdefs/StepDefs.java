@@ -103,29 +103,8 @@ public class StepDefs {
 		
 	}
 
-	@Then("Application logo is displayed")
-	public void Application_logo_is_displayed()
-	{
-		cmnPageObject.validateLogo();
-		logger.info("Logo Is displayed Successfully");
-	}
-	@When("User is on application landing page")
-	public void user_is_on_application_landing_page() {
-	    
-	}
-	
-	@Then("Application logo height is {string}")
-	public void application_logo_height_is(String ActualHeight) {
-	   cmnPageObject.validateLogoHeight(ActualHeight);
-	   logger.info("Logo Height match Actual Height is : "+ ActualHeight);
-	   
-	}
-	@Then("Application logo width is {string}")
-	public void application_logo_width_is(String ActualWidth) {
-	   cmnPageObject.validateLogoWidth(ActualWidth);
-	   logger.info("Logo Width match Actual Height is : "+ ActualWidth);
-	   
-	}
+
+
 	
 	@When("Search box is displayed")
 	public void search_box_is_displayed() {
