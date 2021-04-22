@@ -39,16 +39,19 @@ public class LogoCheck_StepDefs {
 		scn = testContext.getScenario();
 		
 		cmnPageObject = new CmnPageObject(driver);
+		searchPageObjects = new SearchPageObjects(driver);
+		socialMediaObjects = new SocialMediaObjects(driver);
+		
 	}
 	
 
-//	@Given("User navigated to the home page of the application url")
-//	public void user_navigated_to_the_home_page_of_the_application_url()
-//	{
-//		driver.get(url);
-//		scn.log("Browser navigated to the URL" + url);
-//		
-//	}
+	@Given("User navigated to the home page of the application url")
+	public void user_navigated_to_the_home_page_of_the_application_url()
+	{
+		driver.get(url);
+		scn.log("Browser navigated to the URL" + url);
+		
+	}
 
 	@Then("Application logo is displayed")
 	public void Application_logo_is_displayed()

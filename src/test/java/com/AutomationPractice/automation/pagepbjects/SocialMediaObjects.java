@@ -23,8 +23,8 @@ public class SocialMediaObjects {
 	private By YoutubeIconLink = By.xpath("//li[@class='youtube']");
 	
 	private By FacebookAccountName = By.xpath("//h2//span[text()='Selenium Framework']");
-	private By TiwtterAccountName = By.xpath("//div[@class='css-1dbjc4n r-6gpygo r-14gqq1x']/div/div/div/div/span/span[text()='Selenium Framework']");
-	private By YoutubeAccountName = By.xpath("//yt-formatted-string[@id=\"text\" and @class='style-scope ytd-button-renderer style-default size-default']");
+	private By TiwtterAccountName = By.xpath("(//span[text()='Selenium Framework'])[2]");
+	private By YoutubeAccountName = By.xpath("//div[@id='text-container']/yt-formatted-string[@id='text' and text()='Selenium Framework']");
 	
 	
 	

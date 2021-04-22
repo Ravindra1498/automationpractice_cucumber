@@ -29,10 +29,10 @@ public class StepDefs_Hooks {
 	int setScript_timeout_in_sec = 20;
 	int webDriver_wait_timeout_sec = 20;
 	
-	//Declaration
-		CmnPageObject cmnPageObject;
-		SearchPageObjects searchPageObjects;
-		SocialMediaObjects socialMediaObjects;
+//	//Declaration
+//		CmnPageObject cmnPageObject;
+//		SearchPageObjects searchPageObjects;
+//		SocialMediaObjects socialMediaObjects;
 	
 	
 	public StepDefs_Hooks(TestContext testContext)
@@ -59,9 +59,9 @@ public class StepDefs_Hooks {
 		scn.log("Browser Invoked");
 		logger.info("Browser Invoked");
 		
-		cmnPageObject = new CmnPageObject(driver);
-		searchPageObjects = new SearchPageObjects(driver);
-		socialMediaObjects = new SocialMediaObjects(driver);
+//		cmnPageObject = new CmnPageObject(driver);
+//		searchPageObjects = new SearchPageObjects(driver);
+//		socialMediaObjects = new SocialMediaObjects(driver);
 		
 		
 	}
