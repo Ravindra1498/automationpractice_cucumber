@@ -42,19 +42,29 @@ public class SocialMedia_StepDefs {
 		
 	}
 	
+	@When("User clicks on  facebook link  of the bottom landing page and open new tab")
+	public void user_clicks_on_facebook_link_of_the_bottom_landing_page_and_open_new_tab() {
+	    
+		socialMediaObjects.ClickOnFacebookIconLink();
+	}
 	
+	@Then("User able to see facebook group with name {string}")
+	public void user_able_to_see_facebook_group_with_name(String FacebookAccount) {
+	   
+		socialMediaObjects.validateTiwtterAccountNameText(FacebookAccount);
+	}
 	
-//	@When("User clicks on  twitter link  of the bottom landing page and open new tab")
-//	public void user_clicks_on_twitter_link_of_the_bottom_landing_page_and_open_new_tab() {
-//	    
-//		socialMediaObjects.ClickOnTwitterIconLink();
-//	}
-//
-//	@Then("User able to see twitter group with name {string}")
-//	public void user_able_to_see_twitter_group_with_name(String TiwtteeAccount) {
-//	   
-//		socialMediaObjects.validateTiwtterAccountNameText(TiwtteeAccount);
-//	}
+	@When("User clicks on  twitter link  of the bottom landing page and open new tab")
+	public void user_clicks_on_twitter_link_of_the_bottom_landing_page_and_open_new_tab() {
+	    
+		socialMediaObjects.ClickOnTwitterIconLink();
+	}
+
+	@Then("User able to see twitter group with name {string}")
+	public void user_able_to_see_twitter_group_with_name(String TiwtteeAccount) {
+	   
+		socialMediaObjects.validateTiwtterAccountNameText(TiwtteeAccount);
+	}
 	
 	@When("User clicks on  Youtube link  of the bottom landing page and open new tab")
 	public void user_clicks_on_youtube_link_of_the_bottom_landing_page_and_open_new_tab() {

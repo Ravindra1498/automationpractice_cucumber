@@ -65,24 +65,31 @@ public class SocialMediaObjects {
 	}
 	public void validateFacebookAccountNameText(String FacebookAccount)
 	{
-		
-		String ExpectedAccountName = driver.findElement(FacebookAccountName).getText();
-		Assert.assertEquals("Account name not validate",ExpectedAccountName,FacebookAccount);
+		newTabOpen();
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.presenceOfElementLocated(FacebookAccountName));
+		String FacebookExpectedAccountName = driver.findElement(FacebookAccountName).getText();
+		System.out.println(FacebookExpectedAccountName);
+		Assert.assertEquals("Account name not validate",FacebookExpectedAccountName,FacebookAccount);
 		logger.info("Account name Validate Actual Account name is " +FacebookAccount);
 		
 	}
 	public void validateTiwtterAccountNameText(String TiwtterAccount)
 	{
-		
-		String ExpectedAccountName = driver.findElement(TiwtterAccountName).getText();
-		Assert.assertEquals("Account name not validate",ExpectedAccountName,TiwtterAccount);
+		newTabOpen();
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.presenceOfElementLocated(TiwtterAccountName));
+		String TiwtterExpectedAccountName = driver.findElement(TiwtterAccountName).getText();
+		Assert.assertEquals("Account name not validate",TiwtterExpectedAccountName,TiwtterAccount);
 		logger.info("Account name Validate Actual Account name is " +TiwtterAccount);
 	}
 	public void validateYoutubeAccountNameText(String YoutubeAccount)
 	{
-		
-		String ExpectedAccountName = driver.findElement(YoutubeAccountName).getText();
-		Assert.assertEquals("Account name not validate",ExpectedAccountName,YoutubeAccount);
+		newTabOpen();
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.presenceOfElementLocated(YoutubeAccountName));
+		String YoutubeExpectedAccountName = driver.findElement(YoutubeAccountName).getText();
+		Assert.assertEquals("Account name not validate",YoutubeExpectedAccountName,YoutubeAccount);
 		logger.info("Account name Validate Actual Account name is " +YoutubeAccount);
 	}
 	
