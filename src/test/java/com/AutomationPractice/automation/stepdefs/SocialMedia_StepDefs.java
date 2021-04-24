@@ -51,7 +51,7 @@ public class SocialMedia_StepDefs {
 	@Then("User able to see facebook group with name {string}")
 	public void user_able_to_see_facebook_group_with_name(String FacebookAccount) {
 	   
-		socialMediaObjects.validateTiwtterAccountNameText(FacebookAccount);
+		socialMediaObjects.validateFacebookAccountNameText(FacebookAccount);
 	}
 	
 	@When("User clicks on  twitter link  of the bottom landing page and open new tab")
