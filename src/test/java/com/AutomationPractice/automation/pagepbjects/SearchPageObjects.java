@@ -1,6 +1,7 @@
 package com.AutomationPractice.automation.pagepbjects;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -44,6 +45,25 @@ public class SearchPageObjects {
 		 Assert.assertEquals("Product Count not match",ContainDressProduct,TotalProductContainDress);
 		 
 	 }
+	 
+	 public void productsToAddInCart(List<Map<String,String>> cartDataTable) throws InterruptedException
+	 {
+		 for(int i=0; i<cartDataTable.size();i++)
+			{
+			 searchAndAddProduct(cartDataTable, i);
+			}
+	 }
+	 
+	 public void searchAndAddProduct(List<Map<String,String>> data, int index) throws InterruptedException
+		{
+			String itemName = data.get(index).get("ITEM");
+			String productName = data.get(index).get("PRODUCT_NAME");
+	        int productQuantity = Integer.parseInt(data.get(index).get("QUANTITY"));
+	        System.out.println("----------------------");
+	        System.out.println((index+1) + " Item Name : " + itemName + " Product Name : " + productName + " product quantity : " + productQuantity);
+	        System.out.println("----------------------");
+	        
+		}
 	 
 	 
 }
