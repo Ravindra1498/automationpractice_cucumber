@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -55,8 +56,24 @@ public class SearchProduct_StepDefs {
 	@When("User search following products and add into cart")
 	public void user_search_following_products_and_add_into_cart(List<Map<String,String>> cartDataTable) throws InterruptedException {
 		
-		searchPageObjects.productsToAddInCart(cartDataTable);
-		searchPageObjects.searchAndAddProduct(cartDataTable, 0);
+		String itemName = data.get(index).get("ITEM");
+		String productName = data.get(index).get("PRODUCT_NAME");
+        int productQuantity = Integer.parseInt(data.get(index).get("QUANTITY"));
+        System.out.println("----------------------");
+        System.out.println((index+1) + " Item Name : " + itemName + " Product Name : " + productName + " product quantity : " + productQuantity);
+        System.out.println("----------------------");
+        driver.findElement(By.id("search_query_top")).sendKeys(itemName);
+        driver.findElement(By.name("submit_search")).click();
+        
+        System.out.println("//h5[@itemprop='name']//a[@title='"+productName+"' and @class='product-name']");
+        By Prd =By.xpath("//h5[@itemprop='name']//a[@title='"+productName+"' and @class='product-name']");
+        driver.findElement(Prd).click();
+        driver.findElement(By.xpath("//input[@id='quantity_wanted']")).clear();
+        driver.findElement(By.xpath("//input[@id='quantity_wanted']")).sendKeys(String.valueOf(productQuantity));
+        driver.findElement(By.xpath("//p[@id='add_to_cart']/button")).click();
+        driver.findElement(By.xpath("//span[@class='cross']")).click();
+        driver.findElement(By.id("search_query_top")).clear();
+		
 		
 	}
 	
